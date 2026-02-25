@@ -5,339 +5,160 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MAISON LERI - Bolsos Minimalistas Artesanales</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f9f7f4;
-            color: #2c2c2c;
-            line-height: 1.6;
-        }
-        
-        .header {
-            background-color: white;
-            padding: 50px 20px;
-            text-align: center;
-            border-bottom: 1px solid #e8e6e3;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-        
-        .header h1 {
-            font-size: 36px;
-            font-weight: 300;
-            letter-spacing: 4px;
-            margin-bottom: 12px;
-            color: #3a3a3a;
-        }
-        
-        .header p {
-            font-size: 14px;
-            color: #888;
-            font-weight: 300;
-            letter-spacing: 2px;
-        }
-        
-        .hero {
-            background: linear-gradient(135deg, #fdfbf9 0%, #f9f7f4 100%);
-            padding: 80px 20px;
-            text-align: center;
-            border-bottom: 1px solid #e8e6e3;
-        }
-        
-        .hero h2 {
-            font-size: 32px;
-            font-weight: 300;
-            margin-bottom: 20px;
-            line-height: 1.5;
-            color: #3a3a3a;
-        }
-        
-        .hero p {
-            font-size: 16px;
-            color: #666;
-            max-width: 700px;
-            margin: 0 auto;
-            line-height: 1.8;
-        }
-        
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            padding: 60px 20px;
-            max-width: 1300px;
-            margin: 0 auto;
-        }
-        
-        .product {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            transition: all 0.4s ease;
-            cursor: pointer;
-            border: 1px solid #f0ede9;
-        }
-        
-        .product:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 28px rgba(0,0,0,0.12);
-            border-color: #e0d9d3;
-        }
-        
-        .product-image {
-            width: 100%;
-            height: 320px;
-            background: linear-gradient(135deg, #f5f3f0 0%, #ede9e3 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #aaa;
-            font-size: 14px;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .product-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-        
-        .product:hover .product-image img {
-            transform: scale(1.05);
-        }
-        
-        .product-info {
-            padding: 28px;
-            text-align: center;
-        }
-        
-        .product-name {
-            font-size: 18px;
-            font-weight: 500;
-            margin-bottom: 10px;
-            color: #3a3a3a;
-            letter-spacing: 1px;
-        }
-        
-        .product-desc {
-            font-size: 14px;
-            color: #888;
-            margin-bottom: 0;
-            line-height: 1.6;
-            font-weight: 300;
-        }
-        
-        .collection-label {
-            display: inline-block;
-            margin-top: 12px;
-            font-size: 11px;
-            color: #999;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-        }
-        
-        .cta-section {
-            background: white;
-            padding: 100px 20px;
-            text-align: center;
-            border-top: 1px solid #e8e6e3;
-            border-bottom: 1px solid #e8e6e3;
-        }
-        
-        .cta-section h3 {
-            font-size: 28px;
-            font-weight: 300;
-            margin-bottom: 15px;
-            letter-spacing: 2px;
-            color: #3a3a3a;
-        }
-        
-        .cta-subtitle {
-            font-size: 15px;
-            color: #888;
-            margin-bottom: 40px;
-            font-weight: 300;
-        }
-        
-        .contact-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .btn {
-            padding: 14px 40px;
-            border: 2px solid #3a3a3a;
-            background-color: white;
-            color: #3a3a3a;
-            text-decoration: none;
-            border-radius: 6px;
-            font-size: 14px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            letter-spacing: 1px;
-            font-weight: 500;
-        }
-        
-        .btn:hover {
-            background-color: #3a3a3a;
-            color: white;
-            transform: translateY(-2px);
-        }
-        
-        .btn-primary {
-            background-color: #3a3a3a;
-            color: white;
-            border-color: #3a3a3a;
-        }
-        
-        .btn-primary:hover {
-            background-color: white;
-            color: #3a3a3a;
-            box-shadow: 0 8px 16px rgba(58,58,58,0.15);
-        }
-        
-        .footer {
-            background-color: #f9f7f4;
-            padding: 50px 20px;
-            text-align: center;
-            border-top: 1px solid #e8e6e3;
-            margin-top: 60px;
-        }
-        
-        .footer p {
-            font-size: 13px;
-            color: #888;
-            margin: 8px 0;
-            letter-spacing: 0.5px;
-        }
-        
-        .footer strong {
-            color: #3a3a3a;
-            font-weight: 500;
-        }
-        
-        .divider {
-            width: 40px;
-            height: 1px;
-            background-color: #d4ccc3;
-            margin: 20px auto;
-        }
-        
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 28px;
-            }
-            
-            .hero h2 {
-                font-size: 24px;
-            }
-            
-            .gallery {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 20px;
-                padding: 40px 15px;
-            }
-            
-            .cta-section {
-                padding: 60px 15px;
-            }
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f9f7f4; color: #2c2c2c; line-height: 1.6; }
+        .header { background-color: white; padding: 50px 20px; text-align: center; border-bottom: 1px solid #e8e6e3; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .header h1 { font-size: 36px; font-weight: 300; letter-spacing: 4px; margin-bottom: 12px; color: #3a3a3a; }
+        .header p { font-size: 14px; color: #888; font-weight: 300; letter-spacing: 2px; }
+        .hero { background: linear-gradient(135deg, #fdfbf9 0%, #f9f7f4 100%); padding: 80px 20px; text-align: center; border-bottom: 1px solid #e8e6e3; }
+        .hero h2 { font-size: 32px; font-weight: 300; margin-bottom: 20px; line-height: 1.5; color: #3a3a3a; }
+        .hero p { font-size: 16px; color: #666; max-width: 700px; margin: 0 auto; line-height: 1.8; }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; padding: 60px 20px; max-width: 1300px; margin: 0 auto; }
+        .product { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: all 0.4s ease; cursor: pointer; border: 1px solid #f0ede9; }
+        .product:hover { transform: translateY(-8px); box-shadow: 0 12px 28px rgba(0,0,0,0.12); border-color: #e0d9d3; }
+        .product-image { width: 100%; height: 350px; background-color: #f5f3f0; overflow: hidden; position: relative; }
+        .product-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+        .product:hover .product-image img { transform: scale(1.05); }
+        .product-info { padding: 25px; text-align: center; }
+        .product-name { font-size: 18px; font-weight: 500; margin-bottom: 10px; color: #3a3a3a; letter-spacing: 1px; }
+        .product-desc { font-size: 14px; color: #888; margin-bottom: 0; line-height: 1.6; font-weight: 300; }
+        .collection-label { display: inline-block; margin-top: 12px; font-size: 11px; color: #999; letter-spacing: 1.5px; text-transform: uppercase; }
+        .testimonials { background: #fff; padding: 80px 20px; text-align: center; border-bottom: 1px solid #e8e6e3; }
+        .testimonials h3 { font-size: 28px; font-weight: 300; margin-bottom: 40px; color: #3a3a3a; letter-spacing: 2px; }
+        .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto; }
+        .testimonial-card { padding: 30px; background: #fdfbf9; border-radius: 8px; border: 1px solid #f0ede9; }
+        .testimonial-text { font-style: italic; color: #555; margin-bottom: 20px; font-size: 15px; }
+        .testimonial-author { font-weight: 500; color: #3a3a3a; font-size: 14px; letter-spacing: 1px; }
+        .faq-section { padding: 80px 20px; max-width: 800px; margin: 0 auto; }
+        .faq-section h3 { text-align: center; font-size: 28px; font-weight: 300; margin-bottom: 40px; color: #3a3a3a; letter-spacing: 2px; }
+        .faq-item { margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
+        .faq-question { font-weight: 500; color: #3a3a3a; cursor: pointer; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; }
+        .faq-answer { color: #888; font-size: 14px; font-weight: 300; }
+        .cta-section { background: white; padding: 100px 20px; text-align: center; border-top: 1px solid #e8e6e3; }
+        .contact-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 40px; }
+        .btn { padding: 14px 40px; border: 2px solid #3a3a3a; background-color: white; color: #3a3a3a; text-decoration: none; border-radius: 6px; font-size: 14px; transition: all 0.3s ease; cursor: pointer; letter-spacing: 1px; font-weight: 500; }
+        .btn:hover { background-color: #3a3a3a; color: white; transform: translateY(-2px); }
+        .btn-primary { background-color: #3a3a3a; color: white; border-color: #3a3a3a; }
+        .footer { background-color: #f9f7f4; padding: 60px 20px; text-align: center; border-top: 1px solid #e8e6e3; }
+        .footer p { font-size: 12px; color: #999; margin: 5px 0; }
+        .social-links { margin-bottom: 30px; display: flex; justify-content: center; gap: 20px; }
+        .social-links a { color: #3a3a3a; text-decoration: none; font-size: 14px; letter-spacing: 1px; }
     </style>
 </head>
 <body>
-    <div class="header">
+    <header class="header">
         <h1>MAISON LERI</h1>
         <p>Timeless totes • Refined essentials</p>
-    </div>
-    
-    <div class="hero">
+    </header>
+
+    <section class="hero">
         <h2>Bolsos minimalistas diseñados con intención</h2>
-        <p>Cada pieza es atemporal, elegante y pensada para perdurar. Creaciones artésanales que acompañan tu vida con belleza y propósito.</p>
-    </div>
-    
+        <p>Cada pieza es atemporal, elegante y pensada para perdurar. Creaciones artesanales que acompañan tu vida con belleza y propósito.</p>
+    </section>
+
     <div class="gallery">
         <div class="product">
-            <div class="product-image">🌼</div>
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=800" alt="Daisy Dreams"></div>
             <div class="product-info">
                 <div class="product-name">Daisy Dreams</div>
                 <div class="product-desc">Bolso tote con estampado de margaritas azules. Perfecto para los días de inspiración y tranquilidad.</div>
-                <div class="collection-label">Primavera</div>
+                <span class="collection-label">Primavera</span>
             </div>
         </div>
-        
         <div class="product">
-            <div class="product-image">💜</div>
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1591348113529-5993788d492b?auto=format&fit=crop&q=80&w=800" alt="Wildflower"></div>
             <div class="product-info">
                 <div class="product-name">Wildflower</div>
                 <div class="product-desc">Diseño con flores silvestres en tonos morados. Una declaración de estilo atemporal y elegancia natural.</div>
-                <div class="collection-label">Coleccin Flora</div>
+                <span class="collection-label">Colección Flora</span>
             </div>
         </div>
-        
         <div class="product">
-            <div class="product-image">🤍</div>
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&q=80&w=800" alt="Línea Nube"></div>
             <div class="product-info">
                 <div class="product-name">Línea Nube</div>
                 <div class="product-desc">Minimalismo puro. Textura suave en azul pastel, diseñado para acompañar tu día con ligereza.</div>
-                <div class="collection-label">Premium</div>
+                <span class="collection-label">Premium</span>
             </div>
         </div>
-        
         <div class="product">
-            <div class="product-image">🍓</div>
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1622560480654-d96214fdc887?auto=format&fit=crop&q=80&w=800" alt="Strawberry"></div>
             <div class="product-info">
                 <div class="product-name">Strawberry</div>
                 <div class="product-desc">Delicadeza en cada detalle. Estampado de fresas con tonos naturales y cálidos para cualquier ocasión.</div>
-                <div class="collection-label">Fruits Collection</div>
+                <span class="collection-label">Fruits Collection</span>
             </div>
         </div>
-        
         <div class="product">
-            <div class="product-image">🎀</div>
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&q=80&w=800" alt="Vintage Checkered"></div>
             <div class="product-info">
                 <div class="product-name">Vintage Checkered</div>
                 <div class="product-desc">Patrón vichy clásico en rosa. Nostalgencia y modernidad en un mismo diseño intencional.</div>
-                <div class="collection-label">Retro</div>
+                <span class="collection-label">Retro</span>
             </div>
         </div>
-        
         <div class="product">
-            <div class="product-image">✨</div>
+            <div class="product-image"><img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=800" alt="Personalización"></div>
             <div class="product-info">
                 <div class="product-name">Personalización</div>
                 <div class="product-desc">¿Tienes una visión? Creamos bolsos únicos con tus mensajes, patrones y colores favoritos.</div>
-                <div class="collection-label">A tu medida</div>
+                <span class="collection-label">A tu medida</span>
             </div>
         </div>
     </div>
-    
-    <div class="cta-section">
-        <h3>Hablanos a DM</h3>
-        <p class="cta-subtitle">Consulta precios, colecciones exclusivas y diseños personalizados</p>
+
+    <section class="testimonials">
+        <h3>Experiencias MAISON LERI</h3>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-text">"La calidad del acabado es increíble. Se nota el amor en cada costura. ¡Mi bolso favorito!"</p>
+                <p class="testimonial-author">— Carolina R.</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Buscaba algo elegante pero sencillo para el diario y el modelo Nube superó mis expectativas."</p>
+                <p class="testimonial-author">— Javiera M.</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"El envío fue rápido y el empaque muy cuidado. Una marca con mucha alma."</p>
+                <p class="testimonial-author">— Valentina S.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <h3>Preguntas Frecuentes</h3>
+        <div class="faq-item">
+            <div class="faq-question">¿Hacen envíos a todo Chile? <span>+</span></div>
+            <div class="faq-answer">Sí, realizamos envíos a todas las regiones a través de Starken o Chilexpress por pagar.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">¿Cómo puedo personalizar mi bolso? <span>+</span></div>
+            <div class="faq-answer">Escríbenos por WhatsApp o DM indicando qué frase o color te gustaría agregar a tu diseño.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">¿Cuál es el tiempo de confección? <span>+</span></div>
+            <div class="faq-answer">Nuestros bolsos son artesanales. El tiempo estimado es de 3 a 5 días hábiles antes del envío.</div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h3>¿Lista para tu MAISON LERI?</h3>
+        <p class="cta-subtitle">Consulta precios, colecciones exclusivas y diseños personalizados directamente con nosotros.</p>
         <div class="contact-buttons">
             <a href="https://wa.me/56993582362" class="btn btn-primary" target="_blank">Enviar WhatsApp</a>
             <a href="https://instagram.com/maison_leri" class="btn" target="_blank">Instagram</a>
         </div>
-    </div>
-    
-    <div class="footer">
+    </section>
+
+    <footer class="footer">
+        <div class="social-links">
+            <a href="https://instagram.com/maison_leri" target="_blank">INSTAGRAM</a>
+            <a href="https://wa.me/56993582362" target="_blank">WHATSAPP</a>
+        </div>
         <strong>MAISON LERI</strong>
-        <div class="divider"></div>
         <p>Bolsos minimalistas con propósito</p>
         <p>Diseñados con intención, confeccionados con amor</p>
-        <p style="margin-top: 20px; font-size: 12px;">© 2026 MAISON LERI. Todos los derechos reservados.</p>
-    </div>
+        <p style="margin-top: 20px; opacity: 0.5;">© 2026 MAISON LERI. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>
