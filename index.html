@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAISON LERI - Bolsos Minimalistas</title>
+    <title>MAISON LERI - Bolsos Minimalistas Artesanales</title>
     <style>
         * {
             margin: 0;
@@ -13,157 +13,206 @@
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #fafafa;
-            color: #333;
+            background-color: #f9f7f4;
+            color: #2c2c2c;
+            line-height: 1.6;
         }
         
         .header {
             background-color: white;
-            padding: 40px 20px;
+            padding: 50px 20px;
             text-align: center;
-            border-bottom: 1px solid #e0e0e0;
+            border-bottom: 1px solid #e8e6e3;
             position: sticky;
             top: 0;
             z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
         
         .header h1 {
-            font-size: 32px;
+            font-size: 36px;
             font-weight: 300;
-            letter-spacing: 3px;
-            margin-bottom: 10px;
+            letter-spacing: 4px;
+            margin-bottom: 12px;
+            color: #3a3a3a;
         }
         
         .header p {
             font-size: 14px;
-            color: #666;
+            color: #888;
             font-weight: 300;
+            letter-spacing: 2px;
         }
         
         .hero {
-            background: linear-gradient(135deg, #f5f5f5 0%, #fafafa 100%);
-            padding: 60px 20px;
+            background: linear-gradient(135deg, #fdfbf9 0%, #f9f7f4 100%);
+            padding: 80px 20px;
             text-align: center;
+            border-bottom: 1px solid #e8e6e3;
         }
         
         .hero h2 {
-            font-size: 28px;
+            font-size: 32px;
             font-weight: 300;
-            margin-bottom: 15px;
-            line-height: 1.6;
+            margin-bottom: 20px;
+            line-height: 1.5;
+            color: #3a3a3a;
         }
         
         .hero p {
             font-size: 16px;
-            color: #555;
-            max-width: 600px;
-            margin: 0 auto 30px;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
             line-height: 1.8;
         }
         
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
             padding: 60px 20px;
-            max-width: 1200px;
+            max-width: 1300px;
             margin: 0 auto;
         }
         
         .product {
             background: white;
-            border-radius: 8px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
             cursor: pointer;
+            border: 1px solid #f0ede9;
         }
         
         .product:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+            border-color: #e0d9d3;
         }
         
         .product-image {
             width: 100%;
-            height: 300px;
-            background-color: #e8e8e8;
+            height: 320px;
+            background: linear-gradient(135deg, #f5f3f0 0%, #ede9e3 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #999;
+            color: #aaa;
+            font-size: 14px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        
+        .product:hover .product-image img {
+            transform: scale(1.05);
         }
         
         .product-info {
-            padding: 20px;
+            padding: 28px;
             text-align: center;
         }
         
         .product-name {
-            font-size: 16px;
+            font-size: 18px;
             font-weight: 500;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
+            color: #3a3a3a;
+            letter-spacing: 1px;
         }
         
         .product-desc {
-            font-size: 13px;
+            font-size: 14px;
             color: #888;
-            margin-bottom: 12px;
+            margin-bottom: 0;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+        
+        .collection-label {
+            display: inline-block;
+            margin-top: 12px;
+            font-size: 11px;
+            color: #999;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
         }
         
         .cta-section {
             background: white;
-            padding: 80px 20px;
+            padding: 100px 20px;
             text-align: center;
+            border-top: 1px solid #e8e6e3;
+            border-bottom: 1px solid #e8e6e3;
         }
         
         .cta-section h3 {
-            font-size: 24px;
+            font-size: 28px;
             font-weight: 300;
-            margin-bottom: 20px;
-            letter-spacing: 1px;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            color: #3a3a3a;
+        }
+        
+        .cta-subtitle {
+            font-size: 15px;
+            color: #888;
+            margin-bottom: 40px;
+            font-weight: 300;
         }
         
         .contact-buttons {
             display: flex;
-            gap: 15px;
+            gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
         }
         
         .btn {
-            padding: 12px 30px;
-            border: 2px solid #333;
+            padding: 14px 40px;
+            border: 2px solid #3a3a3a;
             background-color: white;
-            color: #333;
+            color: #3a3a3a;
             text-decoration: none;
-            border-radius: 4px;
+            border-radius: 6px;
             font-size: 14px;
             transition: all 0.3s ease;
             cursor: pointer;
+            letter-spacing: 1px;
+            font-weight: 500;
         }
         
         .btn:hover {
-            background-color: #333;
+            background-color: #3a3a3a;
             color: white;
+            transform: translateY(-2px);
         }
         
         .btn-primary {
-            background-color: #333;
+            background-color: #3a3a3a;
             color: white;
-            border-color: #333;
+            border-color: #3a3a3a;
         }
         
         .btn-primary:hover {
             background-color: white;
-            color: #333;
+            color: #3a3a3a;
+            box-shadow: 0 8px 16px rgba(58,58,58,0.15);
         }
         
         .footer {
-            background-color: #f5f5f5;
-            padding: 40px 20px;
+            background-color: #f9f7f4;
+            padding: 50px 20px;
             text-align: center;
-            border-top: 1px solid #e0e0e0;
+            border-top: 1px solid #e8e6e3;
             margin-top: 60px;
         }
         
@@ -171,21 +220,38 @@
             font-size: 13px;
             color: #888;
             margin: 8px 0;
+            letter-spacing: 0.5px;
+        }
+        
+        .footer strong {
+            color: #3a3a3a;
+            font-weight: 500;
+        }
+        
+        .divider {
+            width: 40px;
+            height: 1px;
+            background-color: #d4ccc3;
+            margin: 20px auto;
         }
         
         @media (max-width: 768px) {
             .header h1 {
-                font-size: 24px;
+                font-size: 28px;
             }
             
             .hero h2 {
-                font-size: 22px;
+                font-size: 24px;
             }
             
             .gallery {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                gap: 15px;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 20px;
                 padding: 40px 15px;
+            }
+            
+            .cta-section {
+                padding: 60px 15px;
             }
         }
     </style>
@@ -198,53 +264,80 @@
     
     <div class="hero">
         <h2>Bolsos minimalistas diseñados con intención</h2>
-        <p>Cada pieza es atemporal, elegante y pensada para perdurar. Conoce nuestras colecciones exclusivas.</p>
+        <p>Cada pieza es atemporal, elegante y pensada para perdurar. Creaciones artésanales que acompañan tu vida con belleza y propósito.</p>
     </div>
     
     <div class="gallery">
         <div class="product">
-            <div class="product-image">🎨 Galería</div>
+            <div class="product-image">🌼</div>
             <div class="product-info">
-                <div class="product-name">Bolsos Minimalistas</div>
-                <div class="product-desc">14 diseños exclusivos disponibles</div>
+                <div class="product-name">Daisy Dreams</div>
+                <div class="product-desc">Bolso tote con estampado de margaritas azules. Perfecto para los días de inspiración y tranquilidad.</div>
+                <div class="collection-label">Primavera</div>
             </div>
         </div>
+        
         <div class="product">
-            <div class="product-image">✨ Premium</div>
+            <div class="product-image">💜</div>
+            <div class="product-info">
+                <div class="product-name">Wildflower</div>
+                <div class="product-desc">Diseño con flores silvestres en tonos morados. Una declaración de estilo atemporal y elegancia natural.</div>
+                <div class="collection-label">Coleccin Flora</div>
+            </div>
+        </div>
+        
+        <div class="product">
+            <div class="product-image">🤍</div>
             <div class="product-info">
                 <div class="product-name">Línea Nube</div>
-                <div class="product-desc">Suave, Ligero, Intencional</div>
+                <div class="product-desc">Minimalismo puro. Textura suave en azul pastel, diseñado para acompañar tu día con ligereza.</div>
+                <div class="collection-label">Premium</div>
             </div>
         </div>
+        
         <div class="product">
-            <div class="product-image">🍓 Colección</div>
+            <div class="product-image">🍓</div>
             <div class="product-info">
-                <div class="product-name">Strawberry Collection</div>
-                <div class="product-desc">Delicadeza en cada detalle</div>
+                <div class="product-name">Strawberry</div>
+                <div class="product-desc">Delicadeza en cada detalle. Estampado de fresas con tonos naturales y cálidos para cualquier ocasión.</div>
+                <div class="collection-label">Fruits Collection</div>
             </div>
         </div>
+        
         <div class="product">
-            <div class="product-image">🤍 Exclusivo</div>
+            <div class="product-image">🎀</div>
             <div class="product-info">
-                <div class="product-name">Diseños Personalizados</div>
-                <div class="product-desc">Escríbenos tus ideas</div>
+                <div class="product-name">Vintage Checkered</div>
+                <div class="product-desc">Patrón vichy clásico en rosa. Nostalgencia y modernidad en un mismo diseño intencional.</div>
+                <div class="collection-label">Retro</div>
+            </div>
+        </div>
+        
+        <div class="product">
+            <div class="product-image">✨</div>
+            <div class="product-info">
+                <div class="product-name">Personalización</div>
+                <div class="product-desc">¿Tienes una visión? Creamos bolsos únicos con tus mensajes, patrones y colores favoritos.</div>
+                <div class="collection-label">A tu medida</div>
             </div>
         </div>
     </div>
     
     <div class="cta-section">
         <h3>Hablanos a DM</h3>
-        <p style="margin-bottom: 30px; color: #666;">Consulta precios, colecciones exclusivas y personalizaciones</p>
+        <p class="cta-subtitle">Consulta precios, colecciones exclusivas y diseños personalizados</p>
         <div class="contact-buttons">
-            <a href="https://wa.me/56912345678" class="btn btn-primary">WhatsApp</a>
-            <a href="https://instagram.com/maison_leri" class="btn">Instagram DM</a>
+            <a href="https://wa.me/56912345678" class="btn btn-primary" target="_blank">Enviar WhatsApp</a>
+            <a href="https://instagram.com/maison_leri" class="btn" target="_blank">Instagram</a>
         </div>
     </div>
     
     <div class="footer">
-        <p><strong>MAISON LERI</strong></p>
+        <strong>MAISON LERI</strong>
+        <div class="divider"></div>
         <p>Bolsos minimalistas con propósito</p>
-        <p>© 2026 MAISON LERI. Todos los derechos reservados.</p>
+        <p>Diseñados con intención, confeccionados con amor</p>
+        <p style="margin-top: 20px; font-size: 12px;">© 2026 MAISON LERI. Todos los derechos reservados.</p>
     </div>
 </body>
 </html>
